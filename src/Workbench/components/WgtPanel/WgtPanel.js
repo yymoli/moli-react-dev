@@ -79,7 +79,7 @@ class WgtPanel extends Component {
                 <div className="um-row">
                     <div className="um-lg-12 um-md-12 um-sm-12 um-xs-12">
                         <div className="um-list-item-inner">
-                            <div className="um-wgt-group-title">代办</div>
+                            <div className="um-wgt-group-title um-theme-color">代办</div>
                         </div>
                     </div>
                 </div>
@@ -127,7 +127,7 @@ class WgtPanel extends Component {
                 <div className="um-row">
                     <div className="um-lg-12 um-md-12 um-sm-12 um-xs-12">
                         <div className="um-list-item-inner">
-                            <div className="um-wgt-group-title">我的工作</div>
+                            <div className="um-wgt-group-title um-theme-color">我的工作</div>
                         </div>
                     </div>
                 </div>
@@ -155,7 +155,7 @@ class WgtPanel extends Component {
                 <div className="um-row">
                     <div className="um-lg-12 um-md-12 um-sm-12 um-xs-12">
                         <div className="um-list-item-inner">
-                            <div className="um-wgt-group-title">我的日常</div>
+                            <div className="um-wgt-group-title um-theme-color">我的日常</div>
                         </div>
                     </div>
                 </div>
@@ -177,7 +177,7 @@ class WgtPanel extends Component {
 
                 <div className="um-row">
                     <div className="um-lg-12 um-md-12 um-sm-12 um-xs-12">
-                        <div className="um-list-item-inner"><div className="um-wgt-group-title">我的关注</div></div>
+                        <div className="um-list-item-inner"><div className="um-wgt-group-title um-theme-color">我的关注</div></div>
                     </div>
                 </div>
                 <div className="um-row">

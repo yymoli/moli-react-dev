@@ -90,12 +90,29 @@ class WorkSpace extends Component {
         alert("开发中...")
     }
 
+    switchThemes = ()=> {
+        let link = document.querySelector("#themeslink");
+        let href = link.getAttribute("href");
+        if(href && href.indexOf('static/themes/')){ 
+            
+            
+        }
+        let curT = href.split('static/themes/')[1].split('/')[0];
+        let Ts = ["default","red","orange","blue","green","gray","blue2"];
+        
+        let newT = Ts.splice(Ts.indexOf(curT)-1,1);
+        let news = `../static/themes/${newT}/css/iuapmobile.um.css`;
+        link.setAttribute("href", news);
+
+
+    }
     render() {
         return (
             <div className="um-win">
                 <div className="um-header">
 
                     <h3>我的工作台</h3>
+                    <a href="#" className="um-header-right icon-jindou" onClick={this.switchThemes}>切换主题</a>
                 </div>
                 <div className="um-content">
                     <WgtPanel data={this.state.allData} metaData={this.state.metaData} changeFn = {this.changeFn}/>

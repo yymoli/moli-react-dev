@@ -19,6 +19,7 @@ class WorkSpace extends Component {
             data_params:{},
             headerData:{}
         }
+        this.initThemes();
     }
     /**
      *
@@ -31,10 +32,36 @@ class WorkSpace extends Component {
                 data_params: data_param
             })
         }
+
     }
 
     componentDidMount() {
         this.init();
+
+    }
+
+    initThemes(){
+        let defaultThemeesPath = "../static/themes/default/css/iuapmobile.um.css";
+        let selThemesPath = localStorage.getItem("selThemes");
+        if(selThemesPath){
+            defaultThemeesPath = selThemesPath;
+        }
+        let link = document.querySelector("#themeslink");
+        if(link){
+            if(selThemesPath){
+                link.setAttribute("href", defaultThemeesPath);
+            }
+        }else{
+            let head = document.getElementsByTagName('head')[0];
+            let newlink = document.createElement('link');
+            newlink.id = "themeslink";
+            newlink.href = defaultThemeesPath;
+            newlink.rel = 'stylesheet';
+            newlink.type = 'text/css';
+            head.appendChild(newlink);
+        }
+		localStorage.setItem("selThemes",news);
+        
     }
 
     init = () => {
@@ -121,10 +148,11 @@ class WorkSpace extends Component {
     switchThemes = ()=> {
         let link = document.querySelector("#themeslink");
         let href = link.getAttribute("href");
-        if(href && href.indexOf('static/themes/')){ 
-            
-            
+        if(href && href.indexOf('static/themes/')){
+
+
         }
+      
         let curT = href.split('static/themes/')[1].split('/')[0];
         let Ts = ["default","red","orange","blue","green","gray","blue2"];
         

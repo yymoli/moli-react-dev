@@ -1,0 +1,36 @@
+{
+    "data": {
+        "prefixCls": "titelabal",
+        "className": "headertitle",
+        "children": "我的工作台",
+        "mode": "light",
+        "leftIconName": "account",
+        "rightIconName": "search",
+        "leftContent": "个人信息",
+        "rightContent": {
+            "type": "md",
+            "mothod": "aaa"
+        },
+        "onLeftClick": "onLeftClick",
+        "onRightClick": "onRightClick"
+    },
+    "metaData": {
+        "com": {
+            "email": {
+                "title": "邮箱",
+                "disabled": true,
+                "style": {
+                    "color": "#bcbcbc"
+                }
+            },
+            "companyName": {
+                "title": "公司",
+                "disabled": true,
+                "style": {
+                    "color": "#bcbcbc"
+                }
+            }
+        }
+    },
+    "flag": 0
+}

@@ -1,0 +1,58 @@
+{
+  "views": {
+    "User": {
+      "records": [{
+        "avatar": "https://hongbao-cdn.yonyoucloud.com//uculture/app/user-avator/account.png",
+        "name": "xyy",
+        "departmentName": "移动平台部",
+        "phone": "13010205229"
+      },
+        {
+          "avatar": "https://hongbao-cdn.yonyoucloud.com//uculture/app/user-avator/2017/09/21/a66606f9-41d0-4321-81d9-1ea2c7a2e49a.jpg",
+          "name": "gct",
+          "departmentName": "移动平台部",
+          "phone": "13010205229"
+        }]
+    }
+  },
+  "metas": {
+    "demo":{
+      "properties":{
+        "avatar":{
+          "name": "头像",
+          "display": "none",
+          "style":{
+            "color": "#bcbcbc"
+          }
+        },
+        "name":{
+          "name": "名字",
+          "display": "none",
+          "style":{
+            "color": "red"
+          }
+        },
+        "departmentName":{
+          "name": "部门名字",
+          "display": "block",
+          "style":{
+            "color": "#bcbcbc",
+            "font-size": "18px"
+          }
+        },
+        "phone":{
+          "name": "电话",
+          "display": "block",
+          "style":{
+            "color": "#bcbcbc"
+          }
+        }
+      }
+    }
+  },
+  "flag": 0,
+  "pageNum": 1
+}
+
+
+

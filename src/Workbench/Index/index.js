@@ -171,7 +171,7 @@ class WorkSpace extends Component {
         }
         return (
             <div className="um-win">
-                <div className="um-header">
+                <div className="um-header um-theme-color2">
                     <NavBar
                              rightContent={<div onClick={this.switchThemes} >更改主题</div>}
                     >{title} </NavBar>

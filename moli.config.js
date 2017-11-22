@@ -130,7 +130,8 @@ var devConfig = {
       assets: path.resolve(__dirname, 'src/assets/'),
       api: path.resolve(__dirname, 'src/api/'),
       mock: path.resolve(__dirname, 'mock/'),
-      config: path.resolve(__dirname, 'src/config/')
+      config: path.resolve(__dirname, 'src/config/'),
+        widget : path.resolve(__dirname,`src/components/${process.env.NODE_ENV}`)
     }
   }
 }
@@ -231,7 +232,8 @@ var prodConfig = {
       assets: path.resolve(__dirname, 'src/assets/'),
       api: path.resolve(__dirname, 'src/api/'),
       mock: path.resolve(__dirname, 'mock/'),
-      config: path.resolve(__dirname, 'src/config/')
+      config: path.resolve(__dirname, 'src/config/'),
+        widget : path.resolve(__dirname,`src/components/${process.env.NODE_ENV}`)
     }
   }
 }

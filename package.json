@@ -55,6 +55,8 @@
     "yymoli": "^1.0.4"
   },
   "scripts": {
+    "dev-pc": "cross-env NODE_ENV=pc uba server",
+    "dev-mob": "cross-env NODE_ENV=mobile uba server",
     "dev2": "uba server",
     "dev": "yymoli dev",
     "build": "uba build",

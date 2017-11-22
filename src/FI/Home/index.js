@@ -10,14 +10,10 @@ class ContactsDetails extends Component {
     constructor(props, context) {
         super(props, context);
         this.state = {
-            allData: {},
-            metaData: {},
-            changeData:{},
-            data_params:{},
-            btn_disabled:true
+            data: [],
+            metaData:{},
         }
     }
-
     componentWillMount(){
         if(window.data_params){
             var data_param = $summer.strToJson(window.data_params);
@@ -25,9 +21,7 @@ class ContactsDetails extends Component {
                 data_params: data_param
             })
         }
-
     }
-
     componentDidMount() {
         this.init();
     }
@@ -39,7 +33,6 @@ class ContactsDetails extends Component {
             summer.on("ready", this.getData);
         }
     }
-
     getData = () => {
         //接受参数
         if($summer.os=="ios" || $summer.os=="android"){
@@ -48,101 +41,53 @@ class ContactsDetails extends Component {
                 data_params: data_param
             })
         }
-
-
         let _this = this;
-        // 这里应该是上一个页面传过来的
-        let id = this.state.data_params && this.state.data_params.id ? this.state.data_params.id : 4;
         ajax({
             "type": "get",
-            //"url": "/userlink/getMyCorpUser",
-            "url": "/moli-demo/rest/uiView",
-            /*"param":{
-             "meta": JSON.stringify({
-                  "clientType": os,
-                  "componentId":"list001"
-              }), */
-            // "id":"just a demo"
+            "url": "/userlink/getMyTableList",
             "param":{
                 "componentCode":"demo",
                 "viewCode":"demo",
                 "deviceType":"PC"
             },
-
         },function(data){
-            //if (data.flag == 0){
             if(data.metas){
-                var os=$summer.os;
-                var metasFianal=data.metas.demo.properties;
-
+                let metasFianal=data.metas.demo.properties;
                 _this.setState({metaData : metasFianal});
             }
-            var listData = data.views.User.records;
+            let listData = data.views.User.records;
             _this.setState({data : listData});
-            //  }else{  // 请求成功但数据格式错误
-            //    summer.toast({
-            //      msg : data.msg
-            //     });
-            // }
         },function(res){
             console.log(res);
         });
     }
-
     closeFn =() => {
         summer.closeComponent({
             componentId: "cardView"
         });
     }
-
-    save () {
-        let data = this.state.changeData;
-        if(!data.id){
-            //alert("数据未发生bian hu")
-        }
-        ajax({
-            "type": "post",
-            //"url": "/user/find",
-            "url": "/userlink/save",
-            "param":{
-                "data":JSON.stringify(data)
-            },
-        },function(data){
-            if(data.msg == "success"){
-                alert("保存成功!");
-            }else{
-                alert(data.msg);
-            }
-
-
-        },function(res){
-            console.log(res);
-        });
-    }
-
     changeFn = (allD) => {
         this.setState({
             changeData: allD,
             btn_disabled:false
         });
-
     }
-
     render() {
-        let _this = this;
+        let content=null;
+        if(this.state.data.length==0){
+            content= <img src="../static/img/preload.png" alt="" className="loading-img"/>
+        }else {
+            content=<List data={this.state.data} metaData={this.state.metaData}  />
+        }
         return (
             <div className="um-win">
                 <div className="um-header">
                     <a href="#" className="um-back" onClick={this.closeFn}>返回</a>
                     <h3>联系人</h3>
                 </div>
-                <div className="um-content">
-                    <Card data={this.state.allData} metaData={this.state.metaData} changeFn = {this.changeFn}/>
-                </div>
-                <div className="um-footer">
-                    <div className="um-lg-2 um-md-2 um-sm-3 um-xs-12" style={{"float":"right"}}>
-                        <button className="um-btn" style={{borderRadius:"0px"}} disabled={this.state.btn_disabled} onClick={()=>{_this.save()}}>保存</button>
-                    </div>
+
+                <div className="um-content"  id="umcontent" >
+                    {content}
                 </div>
             </div>
         )

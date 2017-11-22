@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
-import Card  from 'widget/Card/Card';
+//import Card  from 'widget/Card/Card';
 import {Router,Route,IndexRoute,hashHistory,Link} from 'react-router';
 import './TableList.css';
 const propTypes = {

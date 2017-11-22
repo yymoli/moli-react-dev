@@ -1,4 +1,4 @@
-import ComponentManager from './ComponentManager.js';
+import ComponentManager from './componentManager.js';
 
 (function(w){
 	//业务组件配置清单，一个应用运行时，需要动态加载一个业务组件清单

@@ -6,7 +6,7 @@ import {ajax} from 'api/ajax.js';
 import appComponentManage from 'api/appComponentManager.js'
 import WgtPanel from '../components/WgtPanel/WgtPanel';
 import NavBar from '../../components/NavBar/index.js'
-import Icon from '../../components/icon/index'
+import Icon from '../../components/Icon/index'
 
 import "./index.css"
 class WorkSpace extends Component {

@@ -13,6 +13,7 @@ class ContactsDetails extends Component {
             data: [],
             metaData:{},
         }
+        this.initThemes();
     }
     componentWillMount(){
         if(window.data_params){
@@ -32,6 +33,29 @@ class ContactsDetails extends Component {
         } else {
             summer.on("ready", this.getData);
         }
+    }
+    initThemes(){
+        let defaultThemeesPath = "../static/themes/default/css/iuapmobile.um.css";
+        let selThemesPath = localStorage.getItem("selThemes");
+        if(selThemesPath){
+            defaultThemeesPath = selThemesPath;
+        }
+        let link = document.querySelector("#themeslink");
+        if(link){
+            if(selThemesPath){
+                link.setAttribute("href", defaultThemeesPath);
+            }
+        }else{
+            let head = document.getElementsByTagName('head')[0];
+            let newlink = document.createElement('link');
+            newlink.id = "themeslink";
+            newlink.href = defaultThemeesPath;
+            newlink.rel = 'stylesheet';
+            newlink.type = 'text/css';
+            head.appendChild(newlink);
+        }
+
+
     }
     getData = () => {
         //接受参数

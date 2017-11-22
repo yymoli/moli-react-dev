@@ -60,7 +60,7 @@ class WorkSpace extends Component {
             newlink.type = 'text/css';
             head.appendChild(newlink);
         }
-		//localStorage.setItem("selThemes",news);
+
         
     }
 
@@ -159,6 +159,7 @@ class WorkSpace extends Component {
         let newT = Ts.splice(Ts.indexOf(curT)-1,1);
         let news = `../static/themes/${newT}/css/iuapmobile.um.css`;
         link.setAttribute("href", news);
+        localStorage.setItem("selThemes",news);
     }
     render() {
         let _this = this;

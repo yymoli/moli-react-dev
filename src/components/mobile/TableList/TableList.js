@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import Card  from 'widget/Card/Card';
 import {Router,Route,IndexRoute,hashHistory,Link} from 'react-router';
-import './list.css';
+import './TableList.css';
 const propTypes = {
     data:PropTypes.array,
     style:PropTypes.object

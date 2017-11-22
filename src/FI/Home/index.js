@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import ReactDOM from 'react-dom';
 import {ajax} from 'api/ajax.js';
 import Card from '../../components/Card/Card';
+import List from '../../components/pc/TableList/TableList'
 
 import "./index.css"
 class ContactsDetails extends Component {
@@ -54,31 +55,35 @@ class ContactsDetails extends Component {
         let id = this.state.data_params && this.state.data_params.id ? this.state.data_params.id : 4;
         ajax({
             "type": "get",
-            //"url": "/user/find",
-            "url": "/userlink/getContactsDetails",
+            //"url": "/userlink/getMyCorpUser",
+            "url": "/moli-demo/rest/uiView",
+            /*"param":{
+             "meta": JSON.stringify({
+                  "clientType": os,
+                  "componentId":"list001"
+              }), */
+            // "id":"just a demo"
             "param":{
-                "meta": JSON.stringify({
-                    "clientType": $summer.os,
-                    "componentId":"card001"
-                }),
-                "id":id
+                "componentCode":"demo",
+                "viewCode":"demo",
+                "deviceType":"PC"
             },
+
         },function(data){
-            if(typeof data == "string"){
-                data = JSON.parse(data);
-            }
-            if(data.flag == 0){
-                let allData = data.data;
-                _this.setState({
-                    allData: allData
-                });
+            //if (data.flag == 0){
+            if(data.metas){
+                var os=$summer.os;
+                var metasFianal=data.metas.demo.properties;
 
-                let metaData = data.metaData;
-                _this.setState({
-                    metaData: metaData
-                });
+                _this.setState({metaData : metasFianal});
             }
-
+            var listData = data.views.User.records;
+            _this.setState({data : listData});
+            //  }else{  // 请求成功但数据格式错误
+            //    summer.toast({
+            //      msg : data.msg
+            //     });
+            // }
         },function(res){
             console.log(res);
         });
@@ -108,7 +113,7 @@ class ContactsDetails extends Component {
             }else{
                 alert(data.msg);
             }
-            
+
 
         },function(res){
             console.log(res);

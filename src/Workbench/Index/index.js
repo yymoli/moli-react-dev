@@ -60,7 +60,7 @@ class WorkSpace extends Component {
             newlink.type = 'text/css';
             head.appendChild(newlink);
         }
-		localStorage.setItem("selThemes",news);
+		//localStorage.setItem("selThemes",news);
         
     }
 
@@ -174,7 +174,7 @@ class WorkSpace extends Component {
                 <div className="um-header">
                     <NavBar
                              rightContent={<div onClick={this.switchThemes} >更改主题</div>}
-                    >{this.state.headerData.data.children?this.state.headerData.data.children:"首页"} </NavBar>
+                    >{title} </NavBar>
                 </div>
                 <div className="um-content">
                     <WgtPanel data={this.state.allData} metaData={this.state.metaData} changeFn = {this.changeFn}/>

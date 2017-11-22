@@ -25,14 +25,20 @@ class ContentList extends Component {
         })
     }
     renderHeader = () => {
-        var _this = this;
-        let metaData = _this.props.metaData;
-        let metaTitle=[];
+        let _this = this;
+        let data = this.props.data;
+        let metaData = _this.props.metaData
         let headerArr=[];
-        for(let i in metaData){
-           // metaTitle.push( metaData[i].name);
-            headerArr.push(<div className="th1 um-bf1" style={metaData[i].style}>{metaData[i].name}</div>);
-       }
+        for (let i=0;i<data.length;i++){
+            for(var k in data[i]){
+                if(metaData[k]){
+                    if(i==0){
+                        metaData[k].display?metaData[k].style.display=metaData[k].display:metaData[k].style.display="block";
+                        headerArr.push(<div className="th1 um-bf1" style={metaData[k].style}>{metaData[k].name}</div>);
+                    }
+                }
+            }
+        }
         return headerArr;
     }
     renderTabContent = () => {
@@ -42,8 +48,14 @@ class ContentList extends Component {
         let tabContentArray = [];
         let ContentArray=[];
          for (let i=0;i<data.length;i++){
-             for(let k in data[i]){
-                 ContentArray.push( <div  className="td1 um-bf1 um-box-center">{data[i][k]}</div>);
+             for(var k in data[i]){
+                 if(metaData[k]){
+                     let displayContent={"display":"block"};
+                     metaData[k].display=="none"?displayContent.display=metaData[k].display:displayContent.display="block";
+                     ContentArray.push( <div  className="tc td1 um-bf1 um-box-center" style={displayContent}>{data[i][k]}</div>);
+                 }else{
+                          ContentArray.push( <div  className="tc td1 um-bf1 um-box-center" >{data[i][k]}</div>);
+                      }
              }
              tabContentArray.push(<div className="um-box um-line">{ContentArray}</div>);
              ContentArray=[];

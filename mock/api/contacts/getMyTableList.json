@@ -70,7 +70,7 @@
       "properties":{
         "name":{
           "name": "名字",
-          "display": "none",
+          "display": "block",
           "style":{
             "color": "red"
           }
@@ -85,14 +85,14 @@
         },
         "phone":{
           "name": "电话",
-          "display": "block",
+          "display": "none",
           "style":{
-            "color": "#bcbcbc"
+            "color": "green"
           }
         },
         "email":{
           "name": "邮箱",
-          "display": "none",
+          "display": "block",
           "style":{
             "color": "red"
           }
@@ -101,15 +101,15 @@
           "name": "性别",
           "display": "block",
           "style":{
-            "color": "#bcbcbc",
+            "color": "yellow",
             "font-size": "18px"
           }
         },
         "age":{
           "name": "年龄",
-          "display": "block",
+          "display": "none",
           "style":{
-            "color": "#bcbcbc"
+            "color": "blue"
           }
         }
       }

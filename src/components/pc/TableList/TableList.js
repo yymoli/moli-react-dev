@@ -11,6 +11,34 @@ const propTypes = {
 class ContentList extends Component {
     constructor(props, context) {
         super(props, context);
+        this.state = {
+            data:{},
+            metaData:{
+
+                "name":{
+                    "name": "名字",
+                    "display": "block",
+                    "style":{
+                        "color": "red"
+                    }
+                },
+                "departmentName":{
+                    "name": "部门名字",
+                    "display": "block",
+                    "style":{
+                        "color": "#bcbcbc",
+                        "font-size": "18px"
+                    }
+                },
+                "phone":{
+                    "name": "电话",
+                    "display": "none",
+                    "style":{
+                        "color": "green"
+                    }
+                },
+            }
+        }
     }
     componentDidMount() {
         let metaData = this.props.metaData;

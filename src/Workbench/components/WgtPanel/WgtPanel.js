@@ -47,7 +47,7 @@ class WgtPanel extends Component {
               componentOpenType: "createAndOpen",// createAndOpen | openIfExists | openIfExistOrCreateOpen
               componentParams:{
                 id: id,
-                startPage: "../HR/Home.html"
+                startPage: "../BusinessComponent0/Home.html"
               },
               callback: function(){}
             });
@@ -60,7 +60,7 @@ class WgtPanel extends Component {
               componentOpenType: "createAndOpen",// createAndOpen | openIfExists | openIfExistOrCreateOpen
               componentParams:{
                 id: id,
-                startPage: "../FI/Home.html"
+                startPage: "../BusinessComponent1/Home.html"
               },
               callback: function(){}
             });

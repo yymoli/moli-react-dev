@@ -8,7 +8,7 @@ import "./index.less"
 const defaultProps = {
   prefixCls: 'lebra-navbar',
   mode: 'dark',
-  iconName: 'back',
+  iconName: '',
   onLeftClick() {
   },
 };

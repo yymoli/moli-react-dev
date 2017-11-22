@@ -39,7 +39,7 @@ class WgtPanel extends Component {
     openComponent =(id) =>{
         //debugger;
 
-        if(id%2 == 1){
+        if(id == 1){
  
             summer.openComponent({
               componentId: "Corp",
@@ -52,7 +52,7 @@ class WgtPanel extends Component {
               callback: function(){}
             });
 
-        }else if(id%2==0){
+        }else if(id == 2){
 
             summer.openComponent({
               componentId: "cardView",
@@ -61,6 +61,19 @@ class WgtPanel extends Component {
               componentParams:{
                 id: id,
                 startPage: "../BusinessComponent1/Home.html"
+              },
+              callback: function(){}
+            });
+
+        }else if(id == 3){
+
+            summer.openComponent({
+              componentId: "cardView",
+              componentName: "cardView",
+              componentOpenType: "createAndOpen",// createAndOpen | openIfExists | openIfExistOrCreateOpen
+              componentParams:{
+                id: id,
+                startPage: "../BusinessComponent2/Home.html"
               },
               callback: function(){}
             });

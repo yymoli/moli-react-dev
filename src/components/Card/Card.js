@@ -14,14 +14,14 @@ class Card extends Component {
         this.state = {
             defaultData : {
                 name: {
-                    "title":"姓名1",
+                    "title":"name",
                     "disabled": false,
                     "style":{
                         "color": "#bcbcbc"
                     }
                 },
                 mobile: {
-                    "title":"手机号2",
+                    "title":"mobile",
                     "disabled": false,
                     "style":{
                         "color": "#000"
@@ -43,7 +43,7 @@ class Card extends Component {
                 }
             },
             allData:{},
-            metaData:{}
+            metas:{}
         }
     }
 
@@ -53,10 +53,10 @@ class Card extends Component {
 
     componentWillReceiveProps(nextProps) {
         let allData = nextProps.data;
-        let metaData = nextProps.metaData;
+        let metas = nextProps.metas;
         this.setState({
             allData: allData,
-            metaData: metaData
+            metas: metas
         });
     }
 
@@ -74,11 +74,10 @@ class Card extends Component {
     }
 
     titleRec =(key,val) => {
-        let metaData = this.state.metaData;
-        if(!metaData) return;
+        let metas = this.state.metas;
         let defaultData = this.state.defaultData;
-        if(metaData&& metaData.com && metaData.com[key] && metaData.com[key][val] ){
-            return metaData.com[key][val];
+        if(metas.card && metas.card.properties && metas.card.properties[key] && metas.card.properties[key][val] ){
+            return metas.card.properties[key][val];
         }else{
             return defaultData[key][val];
         }
@@ -86,7 +85,7 @@ class Card extends Component {
 
     render() {
         let data = this.state.allData;
-        let metaData = this.state.metaData;
+        let metas = this.state.metas;
         return (
             <div className="mt20">
                 <Row>

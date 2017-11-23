@@ -1,12 +1,47 @@
 import React,{ Component} from 'react';
 import ReactDOM from 'react-dom';
 import {ajax} from 'api/ajax.js';
-import { row,col } from '../layout/index';
+import { Row, Col } from '../layout/index';
 import './Card.css'
+
+const defaultProps = {
+
+};
+
 class Card extends Component {
     constructor(props, context) {
         super(props, context);
         this.state = {
+            defaultMeta : {
+                name: {
+                    "title":"姓名1",
+                    "disabled": true,
+                    "style":{
+                        "color": "#bcbcbc"
+                    }
+                },
+                mobile: {
+                    "title":"手机号2",
+                    "disabled": true,
+                    "style":{
+                        "color": "#bcbcbc"
+                    }
+                },
+                "email":{
+                    "title":"邮箱3",
+                    "disabled": true,
+                    "style":{
+                        "color": "#bcbcbc"
+                    }
+                },
+                "companyName": {
+                    "title": "公司4",
+                    "disabled": true,
+                    "style": {
+                        "color": "#bcbcbc"
+                    }
+                }
+            },
             allData:{},
             metaData:{}
         }
@@ -25,6 +60,7 @@ class Card extends Component {
         });
     }
 
+
     handleChange =(key,e) => {
         //debugger;
         let _this = this;
@@ -37,81 +73,56 @@ class Card extends Component {
         _this.props.changeFn(allD)
     }
 
-    render() {
-        //debugger;
+    renderContent =() => {
+        let list = [];
         let data = this.state.allData;
+        let defaultData = this.state.defaultData;
+        if(!defaultData || !data ) return;
+        for(var item in defaultData){
+            list.push(
+                <Col lg={4} md={4} sm={6} xs={12} >
+                    <div className="um-list-item-inner">
+                        <div className="um-list-item-left">
+                            {this.titleRec(item,'title')}
+                        </div>
+                        <div className="um-list-item-right">
+                            <input type="text"
+                                   disabled={this.titleRec(item,'disabled')}
+                                   style={this.titleRec(item,'style')}
+                                   className="form-control"
+                                   value={data[item]}
+                                   onChange={(e)=>this.handleChange(item,e)}
+                            />
+                        </div>
+                    </div>
+                </Col>
+            )
+        }
+
+        return list;
+    }
+
+    titleRec =(key,val) => {
         let metaData = this.state.metaData;
-
-        let name_title = "姓名";
-        if(metaData&&metaData.com&&metaData.com.name&&metaData.com.name.title)
-            name_title = metaData.com.name.title;
-        
-
-        let mobile_title = "手机号";
-        if(metaData&&metaData.com&&metaData.com.mobile&&metaData.com.mobile.title){
-            mobile_title = metaData.com.mobile.title;
+        if(!metaData) return;
+        let defaultData = this.state.defaultMeta;
+        if(metaData&& metaData.com && metaData.com[key] && metaData.com[key][val] ){
+            return metaData.com[key][val];
+        }else{
+            return defaultData[key][val];
         }
+    }
 
-        let email_title = "邮箱";
-        if(metaData&&metaData.com&&metaData.com.email&&metaData.com.email.title){
-            email_title = metaData.com.email.title;
-        }
+    render() {
 
-        let companyName_title = "公司";
-        if(metaData&&metaData.com&&metaData.com.companyName&&metaData.com.companyName.title){
-            companyName_title = metaData.com.companyName.title;
-        }
-        
         return (
             <div className="mt20">
-      
-
-                <div className="um-row">
-                    <div className="um-lg-4 um-md-4 um-sm-6 um-xs-12">
-                        <div className="um-list-item-inner">
-                            <div className="um-list-item-left">
-                                {name_title}
-                            </div>
-                            <div className="um-list-item-right">
-                                <input type="text" disabled={metaData&&metaData.com&&metaData.com.name&&metaData.com.name.disabled} style={metaData&&metaData.com&&metaData.com.name&&metaData.com.name.style} className="form-control" value={data.userName} onChange={(e)=>this.handleChange("name",e)}/>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="um-lg-4 um-md-4 um-sm-6 um-xs-12">
-                        <div className="um-list-item-inner">
-                            <div className="um-list-item-left">
-                                {mobile_title}
-                            </div>
-                            <div className="um-list-item-right">
-                                <input type="text" disabled={metaData&&metaData.com&&metaData.com.mobile&&metaData.com.mobile.disabled} style={metaData&&metaData.com&&metaData.com.mobile&&metaData.com.mobile.style} className="form-control" value={data.mobile}  onChange={(e)=>this.handleChange("mobile",e)}/>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="um-lg-4 um-md-4 um-sm-6 um-xs-12">
-                        <div className="um-list-item-inner">
-                            <div className="um-list-item-left">
-                                {email_title}
-                            </div>
-                            <div className="um-list-item-right">
-                                <input type="text" disabled={metaData&&metaData.com&&metaData.com.email&&metaData.com.email.disabled} style={metaData&&metaData.com&&metaData.com.email&&metaData.com.email.style} className="form-control" value={data.email}  onChange={(e)=>this.handleChange("email",e)}/>
-                            </div>
-                        </div>
-                    </div>
-        
-                    <div className="um-lg-4 um-md-4 um-sm-6 um-xs-12">
-                        <div className="um-list-item-inner">
-                            <div className="um-list-item-left">
-                                {companyName_title}
-                            </div>
-                            <div className="um-list-item-right">
-                                <input type="text" disabled={metaData&&metaData.com&&metaData.com.companyName&&metaData.com.companyName.disabled} style={metaData&&metaData.com&&metaData.com.companyName&&metaData.com.companyName.style} className="form-control" value={data.companyName}  onChange={(e)=>this.handleChange("companyName",e)}/>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <Row>
+                    {this.renderContent()}
+                </Row>
             </div>
         )
     }
 }
-
+Card.defaultProps = defaultProps;
 export default Card ; 

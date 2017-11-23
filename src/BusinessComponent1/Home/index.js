@@ -64,7 +64,6 @@ class ContactsDetails extends Component {
                 "id":id
             },
         },function(data){
-            debugger;
             if(typeof data == "string"){
                 data = JSON.parse(data);
             }

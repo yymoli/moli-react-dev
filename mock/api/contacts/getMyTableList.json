@@ -69,74 +69,17 @@
     "demo":{
       "properties":{
         "name":{
-          "name": "名字",
+          "name": "姓名",
           "display": "block",
           "style":{
             "color": "red"
-          },
-          "bodyStyle":{
-            "color":"green",
-            "border":"1px solid red"
-          }
-        },
-        "departmentName":{
-          "name": "部门名字",
-          "display": "block",
-          "style":{
-            "color": "#bcbcbc",
-            "font-size": "18px"
-          },
-          "bodyStyle":{
-            "color":"green",
-            "border":"1px solid red"
-          }
-
-        },
-        "phone":{
-          "name": "电话",
-          "display": "none",
-          "style":{
-            "color": "green"
-          },
-          "bodyStyle":{
-            "color":"green",
-            "border":"1px solid red"
-          }
-        },
-        "email":{
-          "name": "邮箱",
-          "display": "block",
-          "style":{
-            "color": "red"
-          },
-          "bodyStyle":{
-            "color":"green",
-            "border":"1px solid red"
-          }
-        },
-        "sex":{
-          "name": "性别",
-          "display": "block",
-          "style":{
-            "color": "yellow",
-            "font-size": "18px"
-          },
-          "bodyStyle":{
-            "color":"green",
-            "border":"1px solid red"
-          }
-        },
-        "age":{
-          "name": "年龄",
-          "display": "none",
-          "style":{
-            "color": "blue"
           },
           "bodyStyle":{
             "color":"green",
             "border":"1px solid red"
           }
         }
+
       }
     }
   },

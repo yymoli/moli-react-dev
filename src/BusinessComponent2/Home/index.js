@@ -78,6 +78,38 @@ class ContactsDetails extends Component {
             }
             let listData = data.views.User.records;
             _this.setState({data : listData});
+            let columns = [{
+                title: '姓名',
+                dataIndex: 'name',
+                key: 'name',
+                type:'text'
+            }, {
+                title: '部门',
+                dataIndex: 'department',
+                key: 'department',
+                type:'text'
+            }, {
+                title: '电话',
+                dataIndex: 'phone',
+                key: 'phone',
+                type:'text'
+            },{
+                title: '邮箱',
+                dataIndex: 'email',
+                key: 'email',
+                type:'text'
+            }, {
+                title: '性别',
+                dataIndex: 'sex',
+                key: 'sex',
+                type:'text'
+            },{
+                title: '年龄',
+                dataIndex: 'age',
+                key: 'age',
+                type:'text'
+            }];
+            _this.setState({columns : columns});
         },function(res){
             console.log(res);
         });
@@ -98,7 +130,7 @@ class ContactsDetails extends Component {
         if(this.state.data.length==0){
             content= <img src="../static/img/preload.png" alt="" className="loading-img"/>
         }else {
-            content=<List data={this.state.data} metaData={this.state.metaData}  />
+            content=<List data={this.state.data} metaData={this.state.metaData} columns={this.state.columns}  />
         }
         return (
             <div className="um-win">

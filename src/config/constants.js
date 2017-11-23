@@ -13,7 +13,7 @@
 
 
 var env = "dev";
-var RootURL = env == 'prod' ? "https://ws.yonyoucloud.com":"https://wstest.yonyoucloud.com";
+var RootURL = env == 'prod' ? "http://10.3.13.7:8091":"http://10.3.13.7:8091";
 var tsURL= env == 'prod' ? 'https://euc.yonyoucloud.com/cas/images/getValiImage?ts=':'http://idtest.yyuap.com/cas/images/getValiImage?ts=';
 
  var headerTest = {

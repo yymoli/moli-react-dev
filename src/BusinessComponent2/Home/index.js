@@ -72,7 +72,7 @@ class ContactsDetails extends Component {
             "param":{
                 "componentCode":"demo",
                 "viewCode":"demo",
-                "deviceType": "IOS"
+                "deviceType": deviceType
             },
         },function(data){
             if(data.metas){

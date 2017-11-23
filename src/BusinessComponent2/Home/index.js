@@ -26,7 +26,6 @@ class ContactsDetails extends Component {
     componentDidMount() {
         this.init();
     }
-
     init = () => {
         if ($summer.os == 'pc') {
             this.getData();
@@ -54,8 +53,6 @@ class ContactsDetails extends Component {
             newlink.type = 'text/css';
             head.appendChild(newlink);
         }
-
-
     }
     getData = () => {
         //接受参数

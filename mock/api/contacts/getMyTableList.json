@@ -73,6 +73,10 @@
           "display": "block",
           "style":{
             "color": "red"
+          },
+          "bodyStyle":{
+            "color":"green",
+            "border":"1px solid red"
           }
         },
         "departmentName":{
@@ -81,13 +85,22 @@
           "style":{
             "color": "#bcbcbc",
             "font-size": "18px"
+          },
+          "bodyStyle":{
+            "color":"green",
+            "border":"1px solid red"
           }
+
         },
         "phone":{
           "name": "电话",
           "display": "none",
           "style":{
             "color": "green"
+          },
+          "bodyStyle":{
+            "color":"green",
+            "border":"1px solid red"
           }
         },
         "email":{
@@ -95,6 +108,10 @@
           "display": "block",
           "style":{
             "color": "red"
+          },
+          "bodyStyle":{
+            "color":"green",
+            "border":"1px solid red"
           }
         },
         "sex":{
@@ -103,6 +120,10 @@
           "style":{
             "color": "yellow",
             "font-size": "18px"
+          },
+          "bodyStyle":{
+            "color":"green",
+            "border":"1px solid red"
           }
         },
         "age":{
@@ -110,6 +131,10 @@
           "display": "none",
           "style":{
             "color": "blue"
+          },
+          "bodyStyle":{
+            "color":"green",
+            "border":"1px solid red"
           }
         }
       }

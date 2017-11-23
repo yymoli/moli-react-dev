@@ -43,8 +43,8 @@ class ContentList extends Component {
             for (let i=0;i<columnData.length;i++){
                 if(metaData[columnData[i].key]){
                     let metaDataKey=metaData[columnData[i].key];
-                    (metaDataKey.display&&metaDataKey.style)?metaDataKey.style.display=metaDataKey.display:'';
-                    headerArr.push(<div className="th1 um-bf1" style={metaDataKey.style?metaDataKey.style:''}>{metaDataKey.name?metaDataKey.name:columnData[i].title}</div>);
+                    (metaDataKey.display&&metaDataKey.style)?JSON.parse(metaDataKey.style).display=metaDataKey.display:'';
+                    headerArr.push(<div className="th1 um-bf1" style={metaDataKey.style?JSON.parse(metaDataKey.style):''}>{metaDataKey.name?metaDataKey.name:columnData[i].title}</div>);
                 }else{
                     headerArr.push(<div className="th1 um-bf1">{columnData[i].title}</div>);
                 }

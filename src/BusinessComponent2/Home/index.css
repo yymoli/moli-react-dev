@@ -1,3 +1,6 @@
 body,.um-win{
-    background: #f4f4f4;
+    background: #ffffff;
+}
+.um-box.um-line{
+    cursor:pointer;
 }

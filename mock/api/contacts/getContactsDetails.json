@@ -13,20 +13,22 @@
       "userName": "逗你玩(zhenglq@yonyou.com)",
       "yhtId": "9a8c4044-df5a-49e7-95cb-3df56a26927f"
   },
-  "metaData":{
-    "com":{
-      "email":{
-        "title":"邮箱",
-        "disabled": true,
-        "style":{
-          "color": "#bcbcbc"
-        }
-      },
-      "companyName":{
-        "title":"公司",
-        "disabled": true,
-        "style":{
-          "color": "#bcbcbc"
+  "metas":{
+    "card":{
+      "properties":{
+        "email":{
+          "title":"邮箱",
+          "disabled": true,
+          "style":{
+            "color": "#bcbcbc"
+          }
+        },
+        "companyName":{
+          "title":"公司",
+          "disabled": true,
+          "style":{
+            "color": "#bcbcbc"
+          }
         }
       }
     }

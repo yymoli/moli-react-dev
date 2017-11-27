@@ -47,7 +47,7 @@ class WgtPanel extends Component {
                 componentOpenType: "createAndOpen",// createAndOpen | openIfExists | openIfExistOrCreateOpen
                 componentParams: {
                     id: id,
-                    url: "BusinessComponent0/Home.html"
+                    url: "../BusinessComponent0/Home.html"
                 },
                 callback: function () {
                 }
@@ -61,7 +61,7 @@ class WgtPanel extends Component {
                 componentOpenType: "createAndOpen",// createAndOpen | openIfExists | openIfExistOrCreateOpen
                 componentParams: {
                     id: id,
-                    url: "BusinessComponent1/Home.html"
+                    url: "../BusinessComponent1/Home.html"
                 },
                 callback: function () {
                 }
@@ -75,7 +75,7 @@ class WgtPanel extends Component {
                 componentOpenType: "createAndOpen",// createAndOpen | openIfExists | openIfExistOrCreateOpen
                 componentParams: {
                     id: id,
-                    url: "BusinessComponent2/Home.html"
+                    url: "../BusinessComponent2/Home.html"
                 },
                 callback: function () {
                 }

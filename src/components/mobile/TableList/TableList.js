@@ -9,12 +9,7 @@ const Brief = Item.Brief;
 
 class ContentList extends Component {
    render() {
-      // 列表项数据
-      let data = this.props.data;
-      // 表头数据
-      let metaData = this.props.metaData;
-      // 显示的数据
-      let dataArr = [];
+      let {data, metaData, dataArr=[]} = this.props;
       data.map((e,i) => {
          return dataArr.push(
             <Item

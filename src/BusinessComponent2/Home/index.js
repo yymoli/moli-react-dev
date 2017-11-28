@@ -64,7 +64,6 @@ class ContactsDetails extends Component {
             })
         }
         let _this = this;
-        let deviceType=$summer.os.toUpperCase();
         ajax({
             "type": "get",
             "url": "/userlink/getMyTableList",
@@ -72,7 +71,6 @@ class ContactsDetails extends Component {
             "param":{
                 "componentCode":"demo",
                 "viewCode":"demo",
-                "deviceType": deviceType
             },
         },function(data){
             if(data.metas){

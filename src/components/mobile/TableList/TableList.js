@@ -35,23 +35,22 @@ class ContentList extends Component {
         let ContentArray=[];
 
         let totalContent=[];
-        for (let i=0;i<data.length;i++){
+        let Brief=[];
+        for(let i=0;i<data.length;i++){
             for(var k in data[i]){
-                if(metaData[k]){
-                    let displayContent={"display":"block"};
-                    metaData[k].display=="none"?displayContent.display=metaData[k].display:displayContent.display="block";
-                    ContentArray.push(  <dt>{data[i][k]}</dt>);
-                }else{
-                    ContentArray.push( <dt>{data[i][k]}</dt>);
-                }
+                Brief.push(<div> {data[i][k]} </div>)
             }
-            ContentArray=[];
-            totalContent.push(  <div  className="list-item"><div className="list-item-inner um-box-center"> <div className="cbox"><dl>{ContentArray}</dl> </div> </div> </div>);
-        }
-
+            totalContent.push(  <Item
+                arrow="horizontal"
+                multipleLine
+                onClick={() => {}}
+            >
+                {Brief}
+            </Item>);
+            Brief=[];
+          }
         return totalContent;
     }
-
     render() {
 
         return (
@@ -61,23 +60,8 @@ class ContentList extends Component {
                  </div>
                 </div>
                 <div className="content">
-                    <List renderHeader={() => 'Subtitle'} className="my-list">
-                        <Item
-                            arrow="horizontal"
-                            multipleLine
-                            onClick={() => {}}
-                            platform="android"
-                        >
-                            ListItem （Android）<Brief>There may have water ripple effect of <br /> material if you set the click event.</Brief>
-                        </Item>
-                        <Item
-                            arrow="horizontal"
-                            thumb="https://zos.alipayobjects.com/rmsportal/dNuvNrtqUztHCwM.png"
-                            multipleLine
-                            onClick={() => {}}
-                        >
-                            Title <Brief>subtitle</Brief>
-                        </Item>
+                    <List   className="my-list">
+                        { this.renderTabContent()}
                     </List>
                 </div>
             </div>

@@ -29,9 +29,7 @@ class ContentList extends Component {
         let _this = this;
         let data = _this.props.data;
         let metaData = _this.props.metaData
-
         let ContentArray=[];
-
         let totalContent=[];
         for (let i=0;i<data.length;i++){
             for(var k in data[i]){

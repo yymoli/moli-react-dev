@@ -4,3 +4,7 @@ body,.um-win{
 .um-box.um-line{
     cursor:pointer;
 }
+.am-list-item img {
+   height: 40px;
+   width: 40px;
+}

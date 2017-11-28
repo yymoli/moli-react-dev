@@ -5,21 +5,17 @@ import Table from 'bee-table';
 import "bee-table/build/Table.css"
 class ContentList extends Component {
     render() {
-        let _this = this;
-        let data = _this.props.data;
-        let metaData = _this.props.metaData;
-        let columnData=[];
+        let {data, metaData, columnData=[]} = this.props;
         for(let k in data[0]){
-            columnData.push({
+           if (k !== "avatar") {
+             columnData.push({
                 "title":"",
                 "key":k,
                 "dataIndex":k,
-                 "render":null
-            })
+                "render":null
+             })
+           }
         }
-        columnData = columnData.filter((e) => {
-           return e.dataIndex !== "avatar";
-        });
         columnData.map((e,i) => {
            if(metaData[columnData[i].dataIndex]){
                metaData[columnData[i].dataIndex].name ?

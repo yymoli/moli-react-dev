@@ -78,7 +78,7 @@
       "demo": {
          "properties": {
             "name": {
-               "name": "name",
+               "name": "姓名",
                "display": "block",
                "style": "{'color': 'red'}"
             },
@@ -100,6 +100,11 @@
             "age": {
                "name": "年龄",
                "display": "none",
+               "style": "{'color': 'blue'}"
+            },
+            "sex": {
+               "name": "性别",
+               "display": "block",
                "style": "{'color': 'blue'}"
             }
          }

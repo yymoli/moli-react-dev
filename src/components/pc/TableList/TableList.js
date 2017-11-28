@@ -17,19 +17,26 @@ class ContentList extends Component {
                  "render":null
             })
         }
-        for(let i=0;i<columnData.length;i++){
-            if(metaData[columnData[i].dataIndex]){
-                metaData[columnData[i].dataIndex].name?columnData[i].title=metaData[columnData[i].key].name:"";
-                if(metaData[columnData[i].dataIndex].style){
-                   let bodyStyle=metaData[columnData[i].dataIndex].style;
-                   columnData[i].render=function(text){return <span style={eval('(' + bodyStyle + ')')}>{text}</span>}
-                }
-                if(metaData[columnData[i].dataIndex].display=="none"){
-                    columnData.splice(i,1);
-                    --i;
-                }
-            }
-        };
+        columnData = columnData.filter((e) => {
+           return e.dataIndex !== "avatar";
+        });
+        columnData.map((e,i) => {
+           if(metaData[columnData[i].dataIndex]){
+               metaData[columnData[i].dataIndex].name ?
+               columnData[i].title = metaData[columnData[i].key].name :
+               "";
+               if(metaData[columnData[i].dataIndex].style){
+                  let bodyStyle = metaData[columnData[i].dataIndex].style;
+                  columnData[i].render = (text) => {
+                     return <span style={eval('(' + bodyStyle + ')')}>{text}</span>
+                  }
+               }
+               if(metaData[columnData[i].dataIndex].display=="none"){
+                   columnData.splice(i,1);
+                   --i;
+               }
+           }
+        });
         return (
             <div className="list um-content">
                 <Table

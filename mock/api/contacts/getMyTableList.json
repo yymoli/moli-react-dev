@@ -1,104 +1,110 @@
 {
-  "views": {
-    "User": {
-      "records": [{
-        "name": "xyy",
-        "departmentName": "移动平台部",
-        "phone": "13010205229",
-        "email":"xyy@yonyou.com",
-        "sex":"男",
-        "age":18
-      },
-        {
-          "name": "gct",
-          "departmentName": "移动平台部",
-          "phone": "13010205229",
-          "email":"xyy@yonyou.com",
-          "sex":"男",
-          "age":18
-        },
-        {
-          "name": "xyy",
-          "departmentName": "移动平台部",
-          "phone": "13010205229",
-          "email":"xyy@yonyou.com",
-          "sex":"男",
-          "age":18
-        },
-        {
-          "name": "gct",
-          "departmentName": "移动平台部",
-          "phone": "13010205229",
-          "email":"xyy@yonyou.com",
-          "sex":"男",
-          "age":18
-        },{
-          "name": "xyy",
-          "departmentName": "移动平台部",
-          "phone": "13010205229",
-          "email":"xyy@yonyou.com",
-          "sex":"男",
-          "age":18
-        },
-        {
-          "name": "gct",
-          "departmentName": "移动平台部",
-          "phone": "13010205229",
-          "email":"xyy@yonyou.com",
-          "sex":"男",
-          "age":18
-        },{
-          "name": "xyy",
-          "departmentName": "移动平台部",
-          "phone": "13010205229",
-          "email":"xyy@yonyou.com",
-          "sex":"男",
-          "age":18
-        },
-        {
-          "name": "gct",
-          "departmentName": "移动平台部",
-          "phone": "13010205229",
-          "email":"xyy@yonyou.com",
-          "sex":"男",
-          "age":18
-        }]
-    }
-  },
-  "metas": {
-    "demo":{
-      "properties":{
-        "name":{
-          "name": "name",
-          "display": "block",
-          "style":"{'color': 'red'}"
-        },
-        "departmentName":{
-          "name": "部门名字",
-          "display": "block",
-          "style":"{'color': '#bcbcbc', 'font-size': '18px'}"
-        },
-        "phone":{
-          "name": "电话",
-          "display": "block",
-          "style":"{'color': 'green'}"
-        },
-        "email":{
-          "name": "邮箱",
-          "display": "block",
-          "style": "{'color':'green','border':'1px solid red'}"
-        },
-        "age":{
-          "name": "年龄",
-          "display": "none",
-          "style":"{'color': 'blue'}"
-        }
+   "views": {
+      "User": {
+         "records": [{
+               "avatar": "https://hongbao-cdn.yonyoucloud.com//uculture/app/user-avator/account.png",
+               "name": "xyy",
+               "departmentName": "移动平台部",
+               "phone": "13010205229",
+               "email": "xyy@yonyou.com",
+               "sex": "男",
+               "age": 18
+            },
+            {
+               "avatar": "https://hongbao-cdn.yonyoucloud.com//uculture/app/user-avator/account.png",
+               "name": "gct",
+               "departmentName": "移动平台部",
+               "phone": "13010205229",
+               "email": "xyy@yonyou.com",
+               "sex": "男",
+               "age": 18
+            },
+            {
+               "avatar": "https://hongbao-cdn.yonyoucloud.com//uculture/app/user-avator/account.png",
+               "name": "xyy",
+               "departmentName": "移动平台部",
+               "phone": "13010205229",
+               "email": "xyy@yonyou.com",
+               "sex": "男",
+               "age": 18
+            },
+            {
+               "avatar": "https://hongbao-cdn.yonyoucloud.com//uculture/app/user-avator/account.png",
+               "name": "gct",
+               "departmentName": "移动平台部",
+               "phone": "13010205229",
+               "email": "xyy@yonyou.com",
+               "sex": "男",
+               "age": 18
+            }, {
+               "avatar": "https://hongbao-cdn.yonyoucloud.com//uculture/app/user-avator/account.png",
+               "name": "xyy",
+               "departmentName": "移动平台部",
+               "phone": "13010205229",
+               "email": "xyy@yonyou.com",
+               "sex": "男",
+               "age": 18
+            },
+            {
+               "avatar": "https://hongbao-cdn.yonyoucloud.com//uculture/app/user-avator/account.png",
+               "name": "gct",
+               "departmentName": "移动平台部",
+               "phone": "13010205229",
+               "email": "xyy@yonyou.com",
+               "sex": "男",
+               "age": 18
+            }, {
+               "avatar": "https://hongbao-cdn.yonyoucloud.com//uculture/app/user-avator/account.png",
+               "name": "xyy",
+               "departmentName": "移动平台部",
+               "phone": "13010205229",
+               "email": "xyy@yonyou.com",
+               "sex": "男",
+               "age": 18
+            },
+            {
+               "avatar": "https://hongbao-cdn.yonyoucloud.com//uculture/app/user-avator/account.png",
+               "name": "gct",
+               "departmentName": "移动平台部",
+               "phone": "13010205229",
+               "email": "xyy@yonyou.com",
+               "sex": "男",
+               "age": 18
+            }
+         ]
       }
-    }
-  },
-  "flag": 0,
-  "pageNum": 1
+   },
+   "metas": {
+      "demo": {
+         "properties": {
+            "name": {
+               "name": "name",
+               "display": "block",
+               "style": "{'color': 'red'}"
+            },
+            "departmentName": {
+               "name": "部门名字",
+               "display": "block",
+               "style": "{'color': '#bcbcbc', 'font-size': '18px'}"
+            },
+            "phone": {
+               "name": "电话",
+               "display": "block",
+               "style": "{'color': 'green'}"
+            },
+            "email": {
+               "name": "邮箱",
+               "display": "block",
+               "style": "{'color':'green','border':'1px solid red'}"
+            },
+            "age": {
+               "name": "年龄",
+               "display": "none",
+               "style": "{'color': 'blue'}"
+            }
+         }
+      }
+   },
+   "flag": 0,
+   "pageNum": 1
 }
-
-
-

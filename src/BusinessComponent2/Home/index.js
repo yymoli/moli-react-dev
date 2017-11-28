@@ -103,7 +103,7 @@ class ContactsDetails extends Component {
         if(this.state.data.length==0){
             content= <img src="../static/img/preload.png" alt="" className="loading-img"/>
         }else {
-            content=<List data={this.state.data} metaData={this.state.metaData}    />
+            content=<List data={this.state.data} metaData={this.state.metaData} />
         }
         return (
             <div className="um-win">

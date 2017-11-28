@@ -8,3 +8,6 @@ body,.um-win{
    height: 40px;
    width: 40px;
 }
+.u-table tr.tr-row-hover, .u-table tr:hover{
+    cursor:pointer;
+}

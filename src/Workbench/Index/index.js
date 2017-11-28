@@ -6,7 +6,7 @@ import {ajax} from 'api/ajax.js';
 import appComponentManage from 'api/appComponentManager.js'
 import WgtPanel from '../components/WgtPanel/WgtPanel';
 import NavBar from '../../components/NavBar/index.js'
-import Icon from '../../components/Icon/index'
+import Icon from 'molibox-icon'
 
 import "./index.css"
 class WorkSpace extends Component {
@@ -174,7 +174,7 @@ class WorkSpace extends Component {
             <div className="um-win">
                 <div className="um-header um-theme-color2">
                     <NavBar
-                             rightContent={<div onClick={this.switchThemes} >更改主题</div>}
+                             rightContent={<Icon className='iconfont' type='icon-settings' onClick={this.switchThemes} >更改主题</Icon>}
                     >{title} </NavBar>
                 </div>
                 <div className="um-content">

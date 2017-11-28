@@ -1,79 +1,41 @@
 import React,{Component} from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
-import Card  from '../../Card/Card';
-import {Router,Route,IndexRoute,hashHistory,Link} from 'react-router';
-import './TableList.css';
-const propTypes = {
-    data:PropTypes.array,
-    style:PropTypes.object
-}
+import Table from 'bee-table';
+import "bee-table/build/Table.css"
 class ContentList extends Component {
-    constructor(props, context) {
-        super(props, context);
-        this.state = {
-            data:{},
-            metaData:{},
-            columns:[]
-        }
-    }
-    componentDidMount() {
-        let metaData = this.props.metaData;
-        this.setState({
-            metaData: metaData
-        })
-    }
-    componentWillReceiveProps(nextProps) {
-        let metaData = nextProps.metaDa
-        ta;
-        this.setState({
-            metaData: metaData
-        })
-    }
-    renderTabContent = () => {
+    render() {
         let _this = this;
         let data = _this.props.data;
         let metaData = _this.props.metaData;
-        let columnData = _this.props.columns;
-        let tabContentArray = [];
-        let ContentArray=[];
-        let headerArr=[];
-        let tabHeaderArr=[];
-        let totalContent=[];
-        if(Array.isArray(columnData)&&columnData.length>0){
-            for (let i=0;i<columnData.length;i++){
-                if(metaData[columnData[i].key]){
-                    let metaDataKey=metaData[columnData[i].key],metaDataKeyStyle;
-                    metaDataKey.style?metaDataKeyStyle=JSON.parse(metaDataKey.style):'';
-                    metaDataKey.display?metaDataKeyStyle.display=metaDataKey.display:'';
-                    headerArr.push(<div className="th1 um-bf1" style={metaDataKey.style?metaDataKeyStyle:''}>{metaDataKey.name?metaDataKey.name:columnData[i].title}</div>);
-                }else{
-                    headerArr.push(<div className="th1 um-bf1">{columnData[i].title}</div>);
+        let columnData=[];
+        for(let k in data[0]){
+            columnData.push({
+                "title":"",
+                "key":k,
+                "dataIndex":k,
+                 "render":null
+            })
+        }
+        for(let i=0;i<columnData.length;i++){
+            if(metaData[columnData[i].dataIndex]){
+                metaData[columnData[i].dataIndex].name?columnData[i].title=metaData[columnData[i].key].name:"";
+                if(metaData[columnData[i].dataIndex].style){
+                   let bodyStyle=metaData[columnData[i].dataIndex].style;
+                   columnData[i].render=function(text){return <span style={eval('(' + bodyStyle + ')')}>{text}</span>}
+                }
+                if(metaData[columnData[i].dataIndex].display=="none"){
+                    columnData.splice(i,1);
+                    --i;
                 }
             }
-        }
-         for (let i=0;i<data.length;i++){
-             for(var k in data[i]){
-                 if(metaData[k]){
-                     let displayContent={"display":"block"};
-                     metaData[k].display=="none"?displayContent.display=metaData[k].display:"";
-                     ContentArray.push( <div  className="tc td1 um-bf1 um-box-center" style={displayContent}>{data[i][k]}</div>);
-                 }else{
-                     ContentArray.push( <div  className="tc td1 um-bf1 um-box-center" >{data[i][k]}</div>);
-                 }
-             }
-             tabContentArray.push(<div className="content"><div className="um-box um-line">{ContentArray}</div></div>);
-             ContentArray=[];
-         }
-        tabHeaderArr.push(<div className="header"><div className="um-box">{headerArr}</div></div>);
-        totalContent.push(tabHeaderArr);
-        totalContent.push(tabContentArray);
-        return totalContent;
-    }
-    render() {
+        };
         return (
             <div className="list um-content">
-                {this.renderTabContent()}
+                <Table
+                    columns={columnData}
+                    data={data}
+                />
             </div>
         );
     }

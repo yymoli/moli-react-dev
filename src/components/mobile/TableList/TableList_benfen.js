@@ -8,8 +8,6 @@ const propTypes = {
     data:PropTypes.array,
     style:PropTypes.object
 }
-const Item = List.Item;
-const Brief = Item.Brief;
 class ContentList extends Component {
     constructor(props, context) {
         super(props, context);
@@ -61,24 +59,7 @@ class ContentList extends Component {
                  </div>
                 </div>
                 <div className="content">
-                    <List renderHeader={() => 'Subtitle'} className="my-list">
-                        <Item
-                            arrow="horizontal"
-                            multipleLine
-                            onClick={() => {}}
-                            platform="android"
-                        >
-                            ListItem （Android）<Brief>There may have water ripple effect of <br /> material if you set the click event.</Brief>
-                        </Item>
-                        <Item
-                            arrow="horizontal"
-                            thumb="https://zos.alipayobjects.com/rmsportal/dNuvNrtqUztHCwM.png"
-                            multipleLine
-                            onClick={() => {}}
-                        >
-                            Title <Brief>subtitle</Brief>
-                        </Item>
-                    </List>
+                                    {this.renderTabContent()}
                 </div>
             </div>
         );

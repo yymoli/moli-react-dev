@@ -69,7 +69,7 @@
     "demo":{
       "properties":{
         "name":{
-          "name": "名字",
+          "name": "name",
           "display": "block",
           "style":"{'color': 'red'}"
         },
@@ -80,18 +80,13 @@
         },
         "phone":{
           "name": "电话",
-          "display": "none",
-          "style":"{'color': 'green'}",
+          "display": "block",
+          "style":"{'color': 'green'}"
         },
         "email":{
           "name": "邮箱",
           "display": "block",
           "style": "{'color':'green','border':'1px solid red'}"
-        },
-        "sex":{
-          "name": "性别",
-          "display": "block",
-          "style":"{'color': 'yellow', 'font-size':'18px'}"
         },
         "age":{
           "name": "年龄",

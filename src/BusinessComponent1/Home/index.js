@@ -72,7 +72,6 @@ class ContactsDetails extends Component {
                 _this.setState({
                     allData: allData
                 });
-
                 let metaData = data.metaData;
                 _this.setState({
                     metaData: metaData
@@ -118,6 +117,7 @@ class ContactsDetails extends Component {
     changeFn = (allD) => {
         this.setState({
             changeData: allD,
+            data: allD,
             btn_disabled:false
         });
 

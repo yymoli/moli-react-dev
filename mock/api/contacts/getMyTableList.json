@@ -99,8 +99,8 @@
             },
             "age": {
                "name": "年龄",
-               "display": "none",
-               "style": "{'color': 'blue'}"
+               "display": "block",
+               "style": "{'color': 'pink'}"
             },
             "sex": {
                "name": "性别",

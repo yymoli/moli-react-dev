@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import ReactDOM from 'react-dom';
 import {ajax} from 'api/ajax.js';
 import Card from '../../components/Card/Card';
-import List from 'widget/TableList/TableList'
+import List from 'widget/molibox-list/molibox-list'
 
 import "./index.css"
 class ContactsDetails extends Component {

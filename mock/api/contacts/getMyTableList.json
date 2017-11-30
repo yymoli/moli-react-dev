@@ -7,7 +7,7 @@
                "departmentName": "移动平台部",
                "phone": "13010205229",
                "email": "xyy@yonyou.com",
-               "sex": "男",
+               "sexName": "男",
                "age": 18
             },
             {
@@ -16,7 +16,7 @@
                "departmentName": "移动平台部",
                "phone": "13010205229",
                "email": "xyy@yonyou.com",
-               "sex": "男",
+               "sexName": "男",
                "age": 18
             },
             {
@@ -25,7 +25,7 @@
                "departmentName": "移动平台部",
                "phone": "13010205229",
                "email": "xyy@yonyou.com",
-               "sex": "男",
+               "sexName": "男",
                "age": 18
             },
             {
@@ -34,7 +34,7 @@
                "departmentName": "移动平台部",
                "phone": "13010205229",
                "email": "xyy@yonyou.com",
-               "sex": "男",
+               "sexName": "男",
                "age": 18
             }, {
                "avatar": "https://hongbao-cdn.yonyoucloud.com//uculture/app/user-avator/account.png",
@@ -42,7 +42,7 @@
                "departmentName": "移动平台部",
                "phone": "13010205229",
                "email": "xyy@yonyou.com",
-               "sex": "男",
+               "sexName": "男",
                "age": 18
             },
             {
@@ -51,7 +51,7 @@
                "departmentName": "移动平台部",
                "phone": "13010205229",
                "email": "xyy@yonyou.com",
-               "sex": "男",
+               "sexName": "男",
                "age": 18
             }, {
                "avatar": "https://hongbao-cdn.yonyoucloud.com//uculture/app/user-avator/2017/10/13/6b574309-75f0-4fd8-bee3-ac0b94b8dcb1.jpg",
@@ -59,7 +59,7 @@
                "departmentName": "移动平台部",
                "phone": "13010205229",
                "email": "xyy@yonyou.com",
-               "sex": "男",
+               "sexName": "男",
                "age": 18
             },
             {
@@ -68,7 +68,7 @@
                "departmentName": "移动平台部",
                "phone": "13010205229",
                "email": "xyy@yonyou.com",
-               "sex": "男",
+               "sexName": "男",
                "age": 18
             }
          ]
@@ -100,9 +100,9 @@
             "age": {
                "name": "年龄",
                "display": "block",
-               "style": "{'color': 'pink'}"
+               "style": "{'color': 'pink','width':'100px'}"
             },
-            "sex": {
+            "sexName": {
                "name": "性别",
                "display": "block",
                "style": "{'color': 'blue'}"

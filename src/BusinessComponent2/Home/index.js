@@ -66,11 +66,12 @@ class ContactsDetails extends Component {
         let _this = this;
         ajax({
             "type": "get",
-            "url": "/userlink/getMyTableList",
-            //"url": "/moli-demo/rest/uiView",
+            // "url": "/userlink/getMyTableList",
+            "url": "/rest/user",
             "param":{
                 "componentCode":"demo",
                 "viewCode":"demo",
+                "lang":"CN"
             },
         },function(data){
             if(data.metas){
@@ -97,11 +98,47 @@ class ContactsDetails extends Component {
         });
     }
     render() {
+      let columnData = [
+         {
+            title: "用户名",
+            dataIndex: "name",
+            key: "name"
+         },
+         {
+            title: "性别",
+            dataIndex: "sexName",
+            key: "sexName"
+         },
+         {
+            title: "年龄",
+            dataIndex: "age",
+            key: "age"
+         },
+         {
+            title: "部门名字",
+            dataIndex: "departmentName",
+            key: "departmentName"
+         },
+         {
+            title: "电话",
+            dataIndex: "phone",
+            key: "phone"
+         },
+         {
+            title: "邮箱",
+            dataIndex: "email",
+            key: "email"
+         }
+      ];
         let content=null;
         if(this.state.data.length==0){
             content= <img src="../static/img/preload.png" alt="" className="loading-img"/>
         }else {
-            content=<List data={this.state.data} metaData={this.state.metaData} />
+            content=<List
+               data={this.state.data}
+               metaData={this.state.metaData}
+               columnData = {columnData}
+            />
         }
         return (
             <div className="um-win">

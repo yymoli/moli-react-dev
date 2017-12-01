@@ -2,7 +2,7 @@ import React,{Component} from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import { Table, Icon } from 'antd';
-import "./molibox-list.css";
+import "./index.css";
 
 class ContentList extends Component {
     render() {

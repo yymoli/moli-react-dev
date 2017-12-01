@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import ReactDOM from 'react-dom';
 import {ajax} from 'api/ajax.js';
 import Card from '../../components/Card/Card';
-import List from 'widget/molibox-list/molibox-list'
+import List from 'widget/molibox-list/index';
 
 import "./index.css"
 class ContactsDetails extends Component {
@@ -66,8 +66,8 @@ class ContactsDetails extends Component {
         let _this = this;
         ajax({
             "type": "get",
-            // "url": "/userlink/getMyTableList",
-            "url": "/rest/user",
+            "url": "/userlink/getMyTableList",
+            // "url": "/rest/user",
             "param":{
                 "componentCode":"demo",
                 "viewCode":"demo",

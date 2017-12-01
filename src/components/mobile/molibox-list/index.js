@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import {Router, Route, IndexRoute, hashHistory, Link} from 'react-router';
 import {List} from 'antd-mobile';
 import 'antd-mobile/dist/antd-mobile.css';
-import './molibox-list.css';
+import './index.css';
 
 const Item = List.Item;
 const Brief = Item.Brief;

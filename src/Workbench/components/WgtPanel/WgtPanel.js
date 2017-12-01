@@ -81,8 +81,20 @@ class WgtPanel extends Component {
                 }
             });
 
+        } else if (id == 4) {
+           summer.openComponent({
+               componentId: "cardView",
+               componentName: "cardView",
+               componentOpenType: "createAndOpen",// createAndOpen | openIfExists | openIfExistOrCreateOpen
+               componentParams: {
+                   id: id,
+                   url: "../BusinessComponent3/Home.html"
+               },
+               callback: function () {
+               }
+           });
         } else {
-            console.log("开发中")
+           console.log("开发中");
         }
     }
 
@@ -224,4 +236,4 @@ class WgtPanel extends Component {
     }
 }
 
-export default WgtPanel ; 
+export default WgtPanel ;

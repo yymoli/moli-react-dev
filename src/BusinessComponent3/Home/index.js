@@ -2,7 +2,8 @@ import React,{ Component} from 'react';
 import PropTypes from 'prop-types'
 import ReactDOM from 'react-dom';
 import {ajax} from 'api/ajax.js';
-import Tab from 'widget/molibox-tabs/index';
+// import Tab from 'widget/molibox-tabs/index';
+import Input from 'widget/molibox-input/index';
 
 import "./index.css"
 class ContactsDetails extends Component {
@@ -101,10 +102,11 @@ class ContactsDetails extends Component {
                     <a href="#" className="um-back" onClick={this.closeFn}>返回</a>
                     <h3>联系人</h3>
                 </div>
-                <Tab
+                {/* <Tab
                    metaData = {this.state.metaData}
                    data = {this.state.data}
-                />
+                /> */}
+                <Input />
             </div>
         )
     }

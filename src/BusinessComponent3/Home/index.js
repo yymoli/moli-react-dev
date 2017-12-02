@@ -3,8 +3,8 @@ import PropTypes from 'prop-types'
 import ReactDOM from 'react-dom';
 import {ajax} from 'api/ajax.js';
 // import Tab from 'widget/molibox-tabs/index';
-// import Input from 'widget/molibox-input/index';
-import Textarea from 'widget/molibox-textarea/index';
+import Input from 'widget/molibox-input/index';
+// import Textarea from 'widget/molibox-textarea/index';
 
 import "./index.css"
 class ContactsDetails extends Component {
@@ -107,8 +107,8 @@ class ContactsDetails extends Component {
                    metaData = {this.state.metaData}
                    data = {this.state.data}
                 /> */}
-                {/* <Input /> */}
-                <Textarea />
+                <Input />
+                {/* <Textarea /> */}
             </div>
         )
     }

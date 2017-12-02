@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import {ajax} from 'api/ajax.js';
 // import Tab from 'widget/molibox-tabs/index';
 // import Input from 'widget/molibox-input/index';
-import Textarea from '../../components/Textarea/index';
+import Textarea from 'widget/molibox-textarea/index';
 
 import "./index.css"
 class ContactsDetails extends Component {

@@ -1,0 +1,43 @@
+body{
+   background-color: rgba(0,0,0,.3);
+}
+.chatWin{
+   width: 800px;
+   height: 500px;
+   position: absolute;
+   left: 50%;
+   top: 50%;
+   transform: translate(-50%,-50%);
+   border: 2px solid #a3a3a3;
+   border-radius: 6px;
+   background-color: #fff;
+   box-shadow: 10px 10px 20px rgba(0,0,0,.3);
+   overflow: hidden;
+}
+.chatCon{
+   width: 100%;
+   height: 450px;
+}
+.chatCon-l{
+   float: left;
+   width: 209px;
+   height: 450px;
+   border-right: 1px solid #e4e4e4;
+   background-color: #fcfcfc;
+}
+.chatCon-r{
+   float: right;
+   width: 586px;
+   height: 450px;
+   border-bottom: 1px solid #e4e4e4;
+   background-color: #f8f8f8;
+}
+.chatCon-view{
+   height: 309px;
+   width: 100%;
+   border-bottom: 1px solid #e4e4e4;
+}
+.chatCon-input{
+   height: 138px;
+   width: 100%;
+}

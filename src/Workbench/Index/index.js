@@ -61,7 +61,7 @@ class WorkSpace extends Component {
             head.appendChild(newlink);
         }
 
-        
+
     }
 
     init = () => {
@@ -152,15 +152,27 @@ class WorkSpace extends Component {
 
 
         }
-      
+
         let curT = href.split('static/themes/')[1].split('/')[0];
         let Ts = ["blue","gray","green","orange","red"];
-        
+
         let newT = Ts.splice(Ts.indexOf(curT)-1,1);
         let news = `../static/themes/${newT}/css/iuapmobile.um.css`;
         link.setAttribute("href", news);
         localStorage.setItem("selThemes",news);
     }
+   openChat = () => {
+      summer.openComponent({
+          componentId: "cardView",
+          componentName: "cardView",
+          componentOpenType: "createAndOpen",
+          componentParams: {
+              url: "../BusinessComponent4/Home.html"
+          },
+          callback: function () {
+          }
+      });
+   };
     render() {
         let _this = this;
         let headerData=this.state.headerData;
@@ -181,7 +193,10 @@ class WorkSpace extends Component {
                     <WgtPanel data={this.state.allData} metaData={this.state.metaData} changeFn = {this.changeFn}/>
                 </div>
                 <div className="um-footer">
-
+                   <div
+                      className = "um-chat"
+                      onClick = {this.openChat}
+                  >C</div>
                 </div>
             </div>
         )

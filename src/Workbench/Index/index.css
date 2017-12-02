@@ -3,3 +3,19 @@ body,.um-win{
     background: #f4f4f4;
 }
 */
+.um-footer{
+   position: relative;
+}
+.um-chat{
+   width: 30px;
+   height: 30px;
+   border-radius: 15px;
+   background: skyblue;
+   cursor: pointer;
+   position: absolute;
+   right: 10px;
+   top: 6px;
+   color: #fff;
+   line-height: 30px;
+   text-align: center;
+}

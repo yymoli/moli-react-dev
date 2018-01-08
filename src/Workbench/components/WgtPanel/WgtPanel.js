@@ -7,8 +7,7 @@ class WgtPanel extends Component {
     constructor(props, context) {
         super(props, context);
         this.state = {
-            allData: {},
-            metaData: {}
+
         }
     }
 
@@ -16,29 +15,9 @@ class WgtPanel extends Component {
 
     }
 
-    componentWillReceiveProps(nextProps) {
-        let allData = nextProps.data;
-        let metaData = nextProps.metaData;
-        this.setState({
-            allData: allData,
-            metaData: metaData
-        });
-    }
 
-    handleChange = (key, e) => {
-        let _this = this;
-        let allD = _this.state.allData;
-
-        allD[key] = e.target.value;
-        _this.setState({
-            allData: allD
-        });
-        _this.props.changeFn(allD)
-    }
 
     openComponent = (id) => {
-        //debugger;
-
         if (id == 1) {
 
             summer.openComponent({
@@ -99,8 +78,6 @@ class WgtPanel extends Component {
     }
 
     render() {
-        let data = this.state.allData;
-        let metaData = this.state.metaData;
         let _this = this;
         return (
             <div className="mt20">

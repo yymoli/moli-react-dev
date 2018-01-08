@@ -15,18 +15,15 @@ class WorkSpace extends Component {
         this.state = {
             allData: {},
             metaData: {},
-            changeData:{},
-            data_params:{},
-            headerData:{}
+            changeData: {},
+            data_params: {},
+            headerData: {}
         }
         this.initThemes();
     }
-    /**
-     *
-     */
-    componentWillMount(){
-        //debugger;
-        if(window.data_params){
+
+    componentWillMount() {
+        if (window.data_params) {
             var data_param = $summer.strToJson(window.data_params);
             this.setState({
                 data_params: data_param
@@ -40,18 +37,18 @@ class WorkSpace extends Component {
 
     }
 
-    initThemes(){
+    initThemes() {
         let defaultThemeesPath = "../static/themes/default/css/iuapmobile.um.css";
         let selThemesPath = localStorage.getItem("selThemes");
-        if(selThemesPath){
+        if (selThemesPath) {
             defaultThemeesPath = selThemesPath;
         }
         let link = document.querySelector("#themeslink");
-        if(link){
-            if(selThemesPath){
+        if (link) {
+            if (selThemesPath) {
                 link.setAttribute("href", defaultThemeesPath);
             }
-        }else{
+        } else {
             let head = document.getElementsByTagName('head')[0];
             let newlink = document.createElement('link');
             newlink.id = "themeslink";
@@ -81,15 +78,15 @@ class WorkSpace extends Component {
             "type": "get",
             //"url": "/user/find",
             "url": "/userlink/getContactsDetails",
-            "param":{
+            "param": {
                 "meta": JSON.stringify({
                     "clientType": $summer.os,
-                    "componentId":"card001"
+                    "componentId": "card001"
                 }),
-                "id":id
+                "id": id
             },
-        },function(data){
-            if(data.flag == 0){
+        }, function (data) {
+            if (data.flag == 0) {
                 let allData = data.data;
                 _this.setState({
                     allData: allData
@@ -101,7 +98,7 @@ class WorkSpace extends Component {
                 });
             }
 
-        },function(res){
+        }, function (res) {
             console.log(res);
         });
     }
@@ -110,93 +107,77 @@ class WorkSpace extends Component {
         // 这里应该是上一个页面传过来的
         ajax({
             "type": "get",
-            //"url": "/user/find",
             "url": "/userlink/header",
-            "param":{
+            "param": {
                 "meta": JSON.stringify({
                     "clientType": $summer.os,
-                    "componentId":"card001"
+                    "componentId": "card001"
                 }),
             },
-        },function(data){
+        }, function (data) {
             _this.setState({
                 headerData: data
             });
 
-        },function(res){
+        }, function (res) {
             console.log(res);
         });
     }
 
-    closeFn =() => {
-        appComponentManager.closeComponent({
-            componentId: "cardView"
-        });
-    }
 
-    save = () => {
-        let data = this.state.changeData;
-
-    }
-
-    changeFn = (allD) => {
-        alert("开发中...")
-    }
-    openaaa =() => {
-        alert(123)
-    }
     switchThemes = ()=> {
         let link = document.querySelector("#themeslink");
         let href = link.getAttribute("href");
-        if(href && href.indexOf('static/themes/')){
-
-
+        if (href && href.indexOf('static/themes/')) {
         }
 
         let curT = href.split('static/themes/')[1].split('/')[0];
-        let Ts = ["blue","gray","green","orange","red"];
+        let Ts = ["blue", "gray", "green", "orange", "red"];
 
-        let newT = Ts.splice(Ts.indexOf(curT)-1,1);
+        let newT = Ts.splice(Ts.indexOf(curT) - 1, 1);
         let news = `../static/themes/${newT}/css/iuapmobile.um.css`;
         link.setAttribute("href", news);
-        localStorage.setItem("selThemes",news);
+        localStorage.setItem("selThemes", news);
     }
-   openChat = () => {
-      summer.openComponent({
-          componentId: "cardView",
-          componentName: "cardView",
-          componentOpenType: "createAndOpen",
-          componentParams: {
-              url: "../BusinessComponent4/Home.html"
-          },
-          callback: function () {
-          }
-      });
-   };
+
+    openChat = () => {
+        summer.openComponent({
+            componentId: "cardView",
+            componentName: "cardView",
+            componentOpenType: "createAndOpen",
+            componentParams: {
+                url: "../BusinessComponent4/Home.html"
+            },
+            callback: function () {
+            }
+        });
+    }
+
     render() {
         let _this = this;
-        let headerData=this.state.headerData;
-        let mode,iconname,title;
-        if(JSON.stringify(headerData) != "{}"){
+        let headerData = this.state.headerData;
+        let mode, iconname, title;
+        if (JSON.stringify(headerData) != "{}") {
             mode = headerData.data.mode;
-            iconname = <Icon type={headerData.data.leftIconName} />;
-            title=headerData.data.children;
+            iconname = <Icon type={headerData.data.leftIconName}/>;
+            title = headerData.data.children;
         }
         return (
             <div className="um-win">
                 <div className="um-header um-theme-color2">
                     <NavBar
-                             rightContent={<Icon className='iconfont' type='icon-settings' onClick={this.switchThemes} >更改主题</Icon>}
+                        rightContent={<Icon className='iconfont' type='icon-settings' onClick={this.switchThemes} >更改主题</Icon>}
                     >{title} </NavBar>
                 </div>
                 <div className="um-content">
-                    <WgtPanel data={this.state.allData} metaData={this.state.metaData} changeFn = {this.changeFn}/>
+                    <WgtPanel />
                 </div>
                 <div className="um-footer">
-                   <div
-                      className = "um-chat"
-                      onClick = {this.openChat}
-                  >C</div>
+                    <div
+                        className="um-chat"
+                        onClick={this.openChat}
+                    >C
+                    </div>
                 </div>
             </div>
         )

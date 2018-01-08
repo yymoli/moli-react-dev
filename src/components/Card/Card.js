@@ -1,8 +1,8 @@
 import React,{ Component} from 'react';
 import ReactDOM from 'react-dom';
 import {ajax} from 'api/ajax.js';
-import { Row, Col } from '../molibox-layout/index';
-import './index.css'
+import { Row, Col } from '../layout/index';
+import './Card.css'
 
 const defaultProps = {
     metaData: {},

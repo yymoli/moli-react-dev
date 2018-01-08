@@ -5,7 +5,7 @@ import {ajax} from 'api/ajax.js';
 
 import appComponentManage from 'api/appComponentManager.js'
 import WgtPanel from '../components/WgtPanel/WgtPanel';
-import NavBar from '../../components/NavBar/index.js'
+import NavBar from 'components/NavBar/index.js'
 import Icon from 'molibox-icon'
 
 import "./index.css"

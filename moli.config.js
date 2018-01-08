@@ -39,16 +39,16 @@ const staticConfig = {
     folder: "src"
 };
 
-glob.sync('./src/**/index.js').forEach(path => {
-    const chunk = path.split('./src/')[1].split('/index.js')[0];
+
+glob.sync('./src/pages/**/index.js').forEach( (path) => {
+    const chunk = path.split('./src/pages/')[1].split('/index.js')[0];
     entries[chunk] = ["babel-polyfill", path, hotMiddlewareScript];
     chunks.push(chunk);
-});
-glob.sync('./src/**/index.js').forEach(path => {
-    const chunk = path.split('./src/')[1].split('/index.js')[0];
+
     prodEntries[chunk] = ["babel-polyfill", path];
     prodChunks.push(chunk);
 });
+console.log(prodEntries);
 
 var devConfig = {
     devtool: 'cheap-module-source-map',
@@ -127,6 +127,7 @@ var devConfig = {
         extensions: ['.web.tsx', '.web.ts', '.web.jsx', '.web.js', '.ts', '.tsx', '.js', '.jsx', '.json'],
         alias: {
             components: path.resolve(__dirname, 'src/components/'),
+            pages: path.resolve(__dirname, 'src/pages/'),
             assets: path.resolve(__dirname, 'src/assets/'),
             api: path.resolve(__dirname, 'src/api/'),
             mock: path.resolve(__dirname, 'mock/'),
@@ -135,12 +136,6 @@ var devConfig = {
         }
     }
 }
-
-//解决兼容问题紧紧支持mac webpack-dashboard
-
-// if (os.platform() == "darwin") {
-//   devConfig.plugins.push(new DashboardPlugin(new Dashboard().setData));
-// }
 
 var prodConfig = {
     //devtool: 'cheap-module-source-map',   //压缩注释
@@ -232,6 +227,7 @@ var prodConfig = {
         ],
         alias: {
             components: path.resolve(__dirname, 'src/components/'),
+            pages: path.resolve(__dirname, 'src/pages/'),
             assets: path.resolve(__dirname, 'src/assets/'),
             api: path.resolve(__dirname, 'src/api/'),
             mock: path.resolve(__dirname, 'mock/'),
@@ -242,21 +238,8 @@ var prodConfig = {
 }
 
 //--------------------
-glob.sync('./src/**/*.html').forEach(path => {
-    const chunk = path.split('./src/')[1].split('/index.html')[0];
-    const filename = chunk + '.html';
-    const htmlConf = {
-        filename: filename,
-        template: path,
-        inject: 'body',
-        favicon: './src/static/img/favicon.png',
-        hash: false,
-        chunks: ['vendors', chunk]
-    }
-    devConfig.plugins.push(new HtmlWebpackPlugin(htmlConf));
-});
-glob.sync('./src/**/*.html').forEach(path => {
-    const chunk = path.split('./src/')[1].split('/index.html')[0];
+glob.sync('./src/pages/**/index.html').forEach(path => {
+    const chunk = path.split('./src/pages/')[1].split('/index.html')[0];
     const filename = chunk + '.html';
     const htmlConf = {
         filename: filename,
@@ -266,6 +249,7 @@ glob.sync('./src/**/*.html').forEach(path => {
         hash: true,
         chunks: ['vendors', chunk]
     }
+    devConfig.plugins.push(new HtmlWebpackPlugin(htmlConf));
     prodConfig.plugins.push(new HtmlWebpackPlugin(htmlConf));
 });
 
